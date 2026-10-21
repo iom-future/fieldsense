@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar.jsx'
 import Hero from './sections/Hero.jsx'
+import HeroStatsStrip from './components/HeroStatsStrip.jsx'
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <HeroStatsStrip />
       </main>
     </div>
   )
