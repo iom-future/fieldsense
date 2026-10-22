@@ -39,33 +39,56 @@ export default function Problem() {
         '(prefers-reduced-motion: reduce)'
       ).matches
 
-      if (prefersReducedMotion) return
+      if (prefersReducedMotion) {
+        gsap.set(['.problem-header-elem', '.problem-card'], {
+          opacity: 1,
+          y: 0,
+          clearProps: 'all',
+        })
+        return
+      }
 
-      gsap.from('.problem-header-elem', {
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 80%',
-          once: true,
-        },
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        stagger: 0.12,
-        ease: 'power2.out',
-      })
+      ScrollTrigger.refresh()
 
-      gsap.from('.problem-card', {
-        scrollTrigger: {
-          trigger: '.problem-cards-grid',
-          start: 'top 85%',
-          once: true,
-        },
-        opacity: 0,
-        y: 24,
-        duration: 0.6,
-        stagger: 0.14,
-        ease: 'power2.out',
-      })
+      gsap.fromTo(
+        '.problem-header-elem',
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.12,
+          ease: 'power2.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: {
+            trigger: container.current,
+            start: 'top 85%',
+            once: true,
+          },
+        }
+      )
+
+      gsap.fromTo(
+        '.problem-card',
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.14,
+          ease: 'power2.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: {
+            trigger: container.current,
+            start: 'top 80%',
+            once: true,
+          },
+        }
+      )
+
+      const handleLoad = () => ScrollTrigger.refresh()
+      window.addEventListener('load', handleLoad)
+      return () => window.removeEventListener('load', handleLoad)
     },
     { scope: container }
   )
@@ -104,7 +127,7 @@ export default function Problem() {
             return (
               <div
                 key={card.title}
-                className="problem-card group relative flex flex-col rounded-[28px] p-2.5 sm:p-3 bg-white/70 backdrop-blur-xl border border-white/90 shadow-[0_12px_32px_-8px_rgba(23,77,53,0.06),0_1px_3px_rgba(0,0,0,0.02),inset_0_1.5px_2px_rgba(255,255,255,1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-10px_rgba(23,77,53,0.12),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:border-leaf/35"
+                className="problem-card group relative flex flex-col rounded-[28px] p-2.5 sm:p-3 bg-white/70 backdrop-blur-xl border border-white/90 shadow-[0_12px_32px_-8px_rgba(23,77,53,0.06),0_1px_3px_rgba(0,0,0,0.02),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:-translate-y-1 hover:shadow-[0_20px_40px_-10px_rgba(23,77,53,0.12),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:border-leaf/35 transition-[border-color,box-shadow,transform] duration-300"
               >
                 <div className="flex h-full flex-col justify-between rounded-[20px] bg-white p-6 sm:p-7 border border-line/60 transition-colors duration-200 group-hover:border-line">
                   <div>
