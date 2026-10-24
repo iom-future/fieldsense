@@ -127,7 +127,7 @@ export default function Problem() {
             return (
               <div
                 key={card.title}
-                className="problem-card group relative flex flex-col rounded-[28px] p-2.5 sm:p-3 bg-white/70 backdrop-blur-xl border border-white/90 shadow-[0_12px_32px_-8px_rgba(23,77,53,0.06),0_1px_3px_rgba(0,0,0,0.02),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:-translate-y-1 hover:shadow-[0_20px_40px_-10px_rgba(23,77,53,0.12),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:border-leaf/35 transition-[border-color,box-shadow,transform] duration-300"
+                className="problem-card group relative flex flex-col rounded-[28px] p-2.5 sm:p-3 bg-white/70 backdrop-blur-2xl border border-white/90 shadow-[0_16px_40px_-12px_rgba(23,77,53,0.08),0_1px_3px_rgba(0,0,0,0.02),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:-translate-y-1 hover:shadow-[0_24px_48px_-12px_rgba(23,77,53,0.14),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:border-leaf/35 transition-[border-color,box-shadow,transform] duration-300"
               >
                 <div className="flex h-full flex-col justify-between rounded-[20px] bg-white p-6 sm:p-7 border border-line/60 transition-colors duration-200 group-hover:border-line">
                   <div>

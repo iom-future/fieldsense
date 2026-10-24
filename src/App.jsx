@@ -4,6 +4,7 @@ import HeroStatsStrip from './components/HeroStatsStrip.jsx'
 import Problem from './sections/Problem.jsx'
 import HowItWorks from './sections/HowItWorks.jsx'
 import Features from './sections/Features.jsx'
+import IntelligenceLoop from './sections/IntelligenceLoop.jsx'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Problem />
         <HowItWorks />
         <Features />
+        <IntelligenceLoop />
       </main>
     </div>
   )
