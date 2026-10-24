@@ -139,23 +139,44 @@ export default function IntelligenceLoop() {
       id="intelligence-loop"
       ref={container}
       aria-labelledby="loop-heading"
-      className="relative bg-paper py-20 sm:py-24 lg:py-32 border-b border-line"
+      className="relative bg-black py-20 sm:py-24 lg:py-32 border-b border-white/10 overflow-hidden text-white"
     >
-      <div className="mx-auto max-w-7xl lg:max-w-[1360px] xl:max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      {/* Background Grid Pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-20"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px)
+          `,
+          backgroundSize: '44px 44px',
+          maskImage: 'radial-gradient(ellipse 75% 65% at 50% 50%, #000 45%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 75% 65% at 50% 50%, #000 45%, transparent 100%)',
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Subtle Central Ambient Glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-forest/25 rounded-full blur-[140px] pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl lg:max-w-[1360px] xl:max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Header Introduction */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="loop-header-elem inline-flex items-center gap-1.5 rounded-full border border-forest/15 bg-forest/5 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-forest">
+          <span className="loop-header-elem inline-flex items-center gap-1.5 rounded-full border border-leaf/30 bg-leaf/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-leaf">
             THE FIELDSENSE PROCESS
           </span>
 
           <h2
             id="loop-heading"
-            className="loop-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl leading-[1.15]"
+            className="loop-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-[1.15]"
           >
             Turning field data into direction.
           </h2>
 
-          <p className="loop-header-elem mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg sm:leading-8">
+          <p className="loop-header-elem mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-400 sm:text-lg sm:leading-8">
             A simple process that connects observations to informed decisions.
           </p>
         </div>
@@ -163,23 +184,23 @@ export default function IntelligenceLoop() {
         {/* Visual Progression Flow Track - Desktop */}
         <div className="loop-flow-track relative mt-14 mb-8 hidden lg:block">
           <div
-            className="absolute top-1/2 left-8 right-8 h-px -translate-y-1/2 bg-line"
+            className="absolute top-1/2 left-8 right-8 h-px -translate-y-1/2 bg-white/15"
             aria-hidden="true"
           />
           <div className="relative flex justify-between">
             {LOOP_STEPS.map((s, idx) => (
               <div
                 key={s.name}
-                className="flex items-center gap-2 rounded-full border border-line bg-white px-4 py-1.5 shadow-2xs"
+                className="flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] backdrop-blur-md px-4 py-1.5 shadow-2xs"
               >
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-forest text-[10px] font-bold text-white">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-leaf text-[10px] font-extrabold text-forest-dark">
                   {idx + 1}
                 </span>
-                <span className="text-xs font-bold uppercase tracking-wider text-ink">
+                <span className="text-xs font-bold uppercase tracking-wider text-white">
                   {s.name}
                 </span>
                 {idx < LOOP_STEPS.length - 1 && (
-                  <ArrowRight className="h-3 w-3 text-muted ml-1" aria-hidden="true" />
+                  <ArrowRight className="h-3 w-3 text-white/40 ml-1" aria-hidden="true" />
                 )}
               </div>
             ))}
@@ -193,13 +214,13 @@ export default function IntelligenceLoop() {
             return (
               <div
                 key={step.name}
-                className="loop-card group relative flex flex-col rounded-[28px] p-2.5 sm:p-3 bg-white/70 backdrop-blur-2xl border border-white/90 shadow-[0_16px_40px_-12px_rgba(23,77,53,0.08),0_1px_3px_rgba(0,0,0,0.02),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:-translate-y-1 hover:shadow-[0_24px_48px_-12px_rgba(23,77,53,0.14),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:border-leaf/35 transition-[border-color,box-shadow,transform] duration-300"
+                className="loop-card group relative flex flex-col rounded-[28px] p-2.5 sm:p-3 bg-white/[0.06] backdrop-blur-2xl border border-white/15 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:-translate-y-1 hover:border-leaf/50 hover:bg-white/[0.1] hover:shadow-[0_24px_50px_-12px_rgba(0,0,0,0.9),inset_0_1px_1px_rgba(255,255,255,0.25)] transition-[border-color,box-shadow,transform,background-color] duration-300"
               >
-                <div className="flex h-full flex-col justify-between rounded-[20px] bg-white p-6 sm:p-7 border border-line/60 transition-colors duration-200 group-hover:border-line">
+                <div className="flex h-full flex-col justify-between rounded-[20px] bg-[#0E1611]/90 p-6 sm:p-7 border border-white/10 transition-colors duration-200 group-hover:border-white/20">
                   <div>
                     {/* Top Bar: Icon and Step Number */}
                     <div className="flex items-center justify-between">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-forest/10 text-forest transition-colors duration-200 group-hover:bg-forest group-hover:text-white">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-leaf/15 text-leaf transition-colors duration-200 group-hover:bg-leaf group-hover:text-forest-dark">
                         <Icon className="h-5 w-5 stroke-[1.8]" aria-hidden="true" />
                       </div>
                       <span className="font-mono text-xs font-bold tracking-widest text-leaf">
@@ -209,21 +230,21 @@ export default function IntelligenceLoop() {
 
                     {/* Stage Details */}
                     <div className="mt-6">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/45">
                         {step.badge}
                       </span>
-                      <h3 className="mt-1 font-heading text-xl font-bold tracking-tight text-ink">
+                      <h3 className="mt-1 font-heading text-xl font-bold tracking-tight text-white">
                         {step.name}
                       </h3>
-                      <p className="mt-2.5 text-sm leading-relaxed text-muted">
+                      <p className="mt-2.5 text-sm leading-relaxed text-gray-300">
                         {step.description}
                       </p>
                     </div>
                   </div>
 
                   {/* Bottom Stage Sequence Indicator */}
-                  <div className="mt-6 flex items-center justify-between border-t border-line/60 pt-4">
-                    <span className="text-[11px] font-medium text-muted">
+                  <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
+                    <span className="text-[11px] font-medium text-gray-400">
                       Stage {step.step} of 04
                     </span>
                     {idx < LOOP_STEPS.length - 1 ? (
@@ -232,7 +253,7 @@ export default function IntelligenceLoop() {
                         <ArrowRight className="h-3 w-3" aria-hidden="true" />
                       </div>
                     ) : (
-                      <div className="inline-flex items-center gap-1 text-[11px] font-semibold text-forest">
+                      <div className="inline-flex items-center gap-1 text-[11px] font-semibold text-leaf">
                         <RefreshCw className="h-3 w-3" aria-hidden="true" />
                         <span>Feedback</span>
                       </div>
@@ -245,16 +266,16 @@ export default function IntelligenceLoop() {
         </div>
 
         {/* Continuous Loop Feedback Footer */}
-        <div className="loop-banner mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-line bg-white px-6 py-4.5 shadow-2xs">
+        <div className="loop-banner mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-white/15 bg-white/[0.05] backdrop-blur-xl px-6 py-4.5 shadow-2xs">
           <div className="text-center sm:text-left">
-            <p className="text-sm font-bold text-ink">
+            <p className="text-sm font-bold text-white">
               Continuous Agronomic Feedback Cycle
             </p>
-            <p className="text-xs text-muted">
+            <p className="text-xs text-gray-400">
               Each observation and resulting decision continuously updates the field baseline for ongoing guidance.
             </p>
           </div>
-          <span className="shrink-0 rounded-full border border-forest/15 bg-forest/5 px-3 py-1 text-[11px] font-semibold tracking-wider text-forest uppercase">
+          <span className="shrink-0 rounded-full border border-leaf/30 bg-leaf/10 px-3 py-1 text-[11px] font-semibold tracking-wider text-leaf uppercase">
             Closed-Loop Intelligence
           </span>
         </div>
