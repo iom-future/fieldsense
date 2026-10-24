@@ -7,6 +7,7 @@ import Features from './sections/Features.jsx'
 import IntelligenceLoop from './sections/IntelligenceLoop.jsx'
 import Testimonials from './sections/Testimonials.jsx'
 import Team from './sections/Team.jsx'
+import FAQ from './sections/FAQ.jsx'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <IntelligenceLoop />
         <Testimonials />
         <Team />
+        <FAQ />
       </main>
     </div>
   )
