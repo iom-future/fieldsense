@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import { Sprout, ArrowRight, ArrowUpRight, Menu, X } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Menu, X } from 'lucide-react'
+import fieldsenseLogo from '../assets/fieldsense-logo.png'
 
 const NAV_LINKS = [
   { label: 'Features', href: '#features' },
@@ -113,20 +114,23 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-line py-3 px-4 sm:px-6 lg:px-8'
-            : 'pt-4 sm:pt-6 pb-4 px-4 sm:px-6 lg:px-8 bg-black/15 backdrop-blur-xs sm:bg-transparent sm:backdrop-blur-none'
-        }`}
+        className="fixed top-2.5 sm:top-4 lg:top-5 left-0 right-0 z-50 pointer-events-none px-3 sm:px-6 lg:px-8 transition-all duration-300"
       >
         {/* =========================================================================
-            MAIN TOP BAR (Uniform across mobile, md, and lg viewports, FIXED)
+            FLOATING WHITE GLASSMORPHISM NAV BAR (Mobile, md, and lg viewports)
+            Has space at left & right on all viewports, white glassmorphism backdrop & border
             ========================================================================= */}
         <nav
           aria-label="Main navigation"
-          className="mx-auto flex max-w-7xl items-center justify-between"
+          className="relative pointer-events-auto mx-auto flex max-w-7xl items-center justify-between px-3.5 sm:px-6 py-1.5 sm:py-2 rounded-full bg-white/75 backdrop-blur-xl md:backdrop-blur-2xl border border-white/80 border-b-white/90 shadow-[0_10px_35px_-5px_rgba(16,59,42,0.09),0_2px_10px_rgba(0,0,0,0.03),inset_0_1px_1px_rgba(255,255,255,0.95),inset_0_-1px_0_rgba(255,255,255,0.7)] transition-all duration-300 hover:bg-white/85"
         >
-          {/* Left End: Brand Logo Pill */}
+          {/* Subtle luminous white border highlight at the bottom with left and right margin spacing */}
+          <div
+            className="absolute inset-x-8 -bottom-px h-[1.5px] bg-gradient-to-r from-transparent via-white to-transparent pointer-events-none rounded-full"
+            aria-hidden="true"
+          />
+
+          {/* Left End: Brand Logo */}
           <a
             href="#hero"
             onClick={() => {
@@ -134,38 +138,18 @@ export default function Navbar() {
               setIsCardMenuOpen(false)
               setIsSidebarOpen(false)
             }}
-            className="group flex items-center gap-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
+            className="group flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest rounded-full"
             aria-label="FieldSense homepage"
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-forest text-white shadow-md border border-white/15 transition-transform duration-150 group-hover:scale-105">
-              <Sprout className="h-5 w-5 stroke-[2.2]" aria-hidden="true" />
-            </div>
-            <div className="flex flex-col">
-              <span
-                className={`font-heading text-xl font-bold tracking-tight transition-colors duration-200 ${
-                  isScrolled ? 'text-forest-dark' : 'text-white drop-shadow-xs'
-                }`}
-              >
-                FieldSense
-              </span>
-              <span
-                className={`hidden sm:block text-[11px] font-medium leading-none transition-colors duration-200 ${
-                  isScrolled ? 'text-muted' : 'text-paper/80 drop-shadow-xs'
-                }`}
-              >
-                Grow With Foresight.
-              </span>
-            </div>
+            <img
+              src={fieldsenseLogo}
+              alt="FieldSense Logo"
+              className="h-11 sm:h-12 lg:h-13 w-auto object-contain transition-transform duration-150 group-hover:scale-105"
+            />
           </a>
 
-          {/* Center: Modern Pill Section Switcher (Only on lg: >= 1024px) */}
-          <div
-            className={`hidden lg:inline-flex items-center gap-1 rounded-full p-1.5 transition-all duration-300 ${
-              isScrolled
-                ? 'bg-paper/95 shadow-sm border border-line'
-                : 'bg-white/95 shadow-xl backdrop-blur-md border border-white/60'
-            }`}
-          >
+          {/* Center: Clean Nav Links (No container background; active indicator still shows) */}
+          <div className="hidden lg:flex items-center gap-1 sm:gap-1.5">
             {NAV_LINKS.map((link) => {
               const isActive = activeSection === link.href
               return (
@@ -173,10 +157,10 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setActiveSection(link.href)}
-                  className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest ${
+                  className={`relative rounded-full px-3.5 py-1.5 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest ${
                     isActive
                       ? 'bg-forest text-white shadow-xs'
-                      : 'text-muted hover:text-ink hover:bg-black/5'
+                      : 'text-ink/75 hover:text-forest hover:bg-black/[0.04]'
                   }`}
                 >
                   {link.label}
@@ -194,7 +178,7 @@ export default function Navbar() {
                 setActiveSection('#early-access')
                 setIsCardMenuOpen(false)
               }}
-              className="hidden sm:inline-flex group items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-white shadow-md border border-white/15 transition-all duration-150 hover:bg-forest-dark hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="hidden sm:inline-flex group items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-white shadow-md border border-white/20 transition-all duration-150 hover:bg-forest-dark hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
             >
               <span>Get Early Access</span>
               <ArrowRight
@@ -210,11 +194,7 @@ export default function Navbar() {
               aria-expanded={isCardMenuOpen}
               aria-controls="tablet-card-menu"
               aria-label={isCardMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              className={`hidden md:inline-flex lg:hidden items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest ${
-                isScrolled
-                  ? 'bg-forest/10 border border-forest/20 text-forest hover:bg-forest/15'
-                  : 'bg-black/35 backdrop-blur-md border border-white/20 text-white hover:bg-black/50'
-              }`}
+              className="hidden md:inline-flex lg:hidden items-center gap-2 rounded-full bg-forest/10 border border-forest/20 px-4 py-2 text-sm font-semibold text-forest transition-all duration-150 hover:bg-forest/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
             >
               <span className="text-xs uppercase tracking-wider font-semibold">
                 {isCardMenuOpen ? 'Close' : 'Menu'}
@@ -226,20 +206,16 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Mobile View (< md): Icon Menu Button */}
+            {/* Mobile View (< md): Icon Menu Button (No background) */}
             <button
               type="button"
               onClick={() => setIsSidebarOpen(true)}
               aria-expanded={isSidebarOpen}
               aria-controls="mobile-sidebar"
               aria-label="Open navigation sidebar"
-              className={`inline-flex md:hidden items-center justify-center rounded-full p-2.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest ${
-                isScrolled
-                  ? 'bg-forest/10 border border-forest/20 text-forest hover:bg-forest/15'
-                  : 'bg-black/35 backdrop-blur-md border border-white/20 text-white hover:bg-black/50'
-              }`}
+              className="inline-flex md:hidden items-center justify-center p-2 text-ink hover:text-forest transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
             >
-              <Menu className="h-5 w-5" aria-hidden="true" />
+              <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
         </nav>
@@ -250,7 +226,7 @@ export default function Navbar() {
         {isCardMenuOpen && (
           <div
             id="tablet-card-menu"
-            className="hidden md:block lg:hidden mx-auto mt-3 max-w-4xl max-h-[80vh] overflow-y-auto"
+            className="pointer-events-auto hidden md:block lg:hidden mx-auto mt-2.5 max-w-4xl max-h-[80vh] overflow-y-auto"
           >
             <div
               style={{ backgroundColor: '#ffffff' }}
@@ -330,11 +306,12 @@ export default function Navbar() {
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-line pb-4">
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-forest text-white shadow-xs">
-                      <Sprout className="h-5 w-5 stroke-[2.2]" aria-hidden="true" />
-                    </div>
-                    <span className="font-heading text-lg font-bold text-ink">FieldSense</span>
+                  <div className="flex items-center">
+                    <img
+                      src={fieldsenseLogo}
+                      alt="FieldSense Logo"
+                      className="h-10 sm:h-12 w-auto object-contain"
+                    />
                   </div>
                   <button
                     type="button"

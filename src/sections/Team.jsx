@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight, User, Sprout, Cpu, Compass } from 'lucide-react'
 
 // Existing validated agricultural imagery from project assets
-import storyVisualImg from '../assets/decision-intelligence.jpg'
+import storyVisualImg from '../assets/farm.jpg'
 
 // Team portraits
 import memberCeoImg from '../assets/team/team-01-ceo.jpg'

@@ -1,4 +1,4 @@
-import { Sprout } from 'lucide-react'
+import fieldsenseLogo from '../assets/fieldsense-logo.png'
 
 const EXPLORE_LINKS = [
   { label: 'Product', href: '#features' },
@@ -20,7 +20,19 @@ export default function Footer() {
     <footer
       id="footer"
       aria-label="Site footer"
-      className="relative overflow-hidden bg-forest-dark text-white border-t border-forest-dark"
+      style={{
+        background: `linear-gradient(180deg, 
+          #ffffff 0%, 
+          #ffffff 12%, 
+          #f2f7f3 26%, 
+          #deece0 42%, 
+          #b2d2b7 58%, 
+          #6ba278 74%, 
+          #2c6747 88%, 
+          #103b2a 100%
+        )`,
+      }}
+      className="relative overflow-hidden border-t border-line text-ink"
     >
       <div className="relative mx-auto max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-8">
         {/* Navigation & Info Columns (Top Section) */}
@@ -29,23 +41,17 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-5">
             <a
               href="#hero"
-              className="group inline-flex items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2 focus-visible:ring-offset-forest-dark"
+              className="group inline-flex items-center rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
               aria-label="FieldSense homepage, back to top"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-forest text-white shadow-md border border-white/15 transition-transform duration-150 group-hover:scale-105">
-                <Sprout className="h-5 w-5 stroke-[2.2]" aria-hidden="true" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading text-xl font-bold tracking-tight text-white drop-shadow-xs">
-                  FieldSense
-                </span>
-                <span className="text-[11px] font-medium leading-none text-paper/80 drop-shadow-xs">
-                  Grow With Foresight.
-                </span>
-              </div>
+              <img
+                src={fieldsenseLogo}
+                alt="FieldSense Logo"
+                className="h-18 sm:h-22 lg:h-24 w-auto object-contain transition-transform duration-150 group-hover:scale-105"
+              />
             </a>
 
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-paper/75">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
               Agricultural intelligence to help farmers make more informed decisions.
             </p>
           </div>
@@ -57,7 +63,7 @@ export default function Footer() {
           >
             {/* Explore */}
             <div>
-              <h3 className="font-heading text-sm font-semibold tracking-wide text-white">
+              <h3 className="font-heading text-sm font-bold tracking-wide text-ink">
                 Explore
               </h3>
               <ul className="mt-4 space-y-3" role="list">
@@ -65,7 +71,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-paper/75 transition-colors duration-150 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2 focus-visible:ring-offset-forest-dark rounded-xs"
+                      className="text-sm text-muted transition-colors duration-150 hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest rounded-xs"
                     >
                       {link.label}
                     </a>
@@ -76,7 +82,7 @@ export default function Footer() {
 
             {/* Get Involved */}
             <div>
-              <h3 className="font-heading text-sm font-semibold tracking-wide text-white">
+              <h3 className="font-heading text-sm font-bold tracking-wide text-ink">
                 Get Involved
               </h3>
               <ul className="mt-4 space-y-3" role="list">
@@ -84,7 +90,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-paper/75 transition-colors duration-150 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2 focus-visible:ring-offset-forest-dark rounded-xs"
+                      className="text-sm text-muted transition-colors duration-150 hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest rounded-xs"
                     >
                       {link.label}
                     </a>
@@ -96,14 +102,14 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div className="sm:col-span-2 lg:col-span-3">
-            <h3 className="font-heading text-sm font-semibold tracking-wide text-white">
+            <h3 className="font-heading text-sm font-bold tracking-wide text-ink">
               Get in Touch
             </h3>
-            <p className="mt-4 text-sm leading-relaxed text-paper/75">
+            <p className="mt-4 text-sm leading-relaxed text-muted">
               Interested in collaborating, piloting the platform, or learning more? Reach out through our{' '}
               <a
                 href="#early-access"
-                className="text-leaf font-medium underline underline-offset-4 transition-colors duration-150 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2 focus-visible:ring-offset-forest-dark rounded-xs"
+                className="text-forest font-semibold underline underline-offset-4 transition-colors duration-150 hover:text-leaf focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest rounded-xs"
               >
                 early access program
               </a>
@@ -113,14 +119,14 @@ export default function Footer() {
         </div>
 
         {/* Subtle Horizontal Divider */}
-        <div className="mt-12 sm:mt-16 border-t border-white/15" />
+        <div className="mt-12 sm:mt-16 border-t border-white/20" />
 
         {/* Metadata & Copyright Row */}
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-xs text-paper/75 sm:mt-8">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-xs text-white/80 sm:mt-8">
           <p>
             &copy; {currentYear} FieldSense. All rights reserved.
           </p>
-          <p className="font-medium text-paper/60">
+          <p className="font-medium text-paper/75">
             Built for a more informed agricultural future.
           </p>
         </div>

@@ -4,7 +4,6 @@ import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
 
-import farmImg from '../assets/farm.jpg'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -205,67 +204,55 @@ export default function EarlyAccess() {
       id="early-access"
       ref={container}
       aria-labelledby="early-access-heading"
-      className="relative py-20 sm:py-24 lg:py-32 text-white overflow-hidden border-b border-forest-dark bg-forest-dark"
+      className="relative py-20 sm:py-24 lg:py-32 text-ink bg-white border-b border-line overflow-hidden"
     >
-      {/* Full-bleed Photo Background with Rich Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={farmImg}
-          alt="Farmers tending crops in an agricultural field"
-          className="h-full w-full object-cover object-center"
-        />
-        {/* Multilayer gradient: deep forest tint on desktop left, soft vignette overall */}
-        <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-forest-dark/95 via-forest-dark/88 to-forest-dark/80" />
-        <div className="absolute inset-0 bg-black/35" />
-      </div>
-
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Desktop Side-by-Side Grid (12 cols) / Mobile & Tablet Stacked */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Text Content */}
           <div className="lg:col-span-6 xl:col-span-7 text-left">
-            <span className="early-header-elem inline-flex items-center gap-1.5 rounded-full border border-leaf/40 bg-leaf/20 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-leaf backdrop-blur-xs">
+            <span className="early-header-elem inline-flex items-center gap-1.5 rounded-full border border-forest/15 bg-forest/5 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-forest">
               GET EARLY ACCESS
             </span>
 
             <h2
               id="early-access-heading"
-              className="early-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-[1.12]"
+              className="early-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl leading-[1.12]"
             >
               Be part of what&apos;s growing.
             </h2>
 
-            <p className="early-header-elem mt-4 max-w-xl text-base leading-relaxed text-paper/90 sm:text-lg sm:leading-8">
+            <p className="early-header-elem mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg sm:leading-8">
               Get updates as we build a smarter future for agriculture.
             </p>
 
-            <p className="early-header-elem mt-2 max-w-xl text-sm sm:text-base leading-relaxed text-paper/75">
+            <p className="early-header-elem mt-2 max-w-xl text-sm sm:text-base leading-relaxed text-muted/80">
               Stay informed about FieldSense&apos;s progress and opportunities to get involved.
             </p>
 
             {/* Benefit Highlights */}
-            <div className="early-header-elem mt-8 space-y-3.5 max-w-md pt-6 border-t border-white/15">
+            <div className="early-header-elem mt-8 space-y-3.5 max-w-md pt-6 border-t border-line">
               <div className="flex items-center gap-3">
-                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-leaf/20 text-leaf">
+                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-forest/10 text-forest">
                   <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
                 </div>
-                <span className="text-sm font-medium text-paper/90">
+                <span className="text-sm font-medium text-ink/85">
                   Preview upcoming agronomic intelligence models
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-leaf/20 text-leaf">
+                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-forest/10 text-forest">
                   <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
                 </div>
-                <span className="text-sm font-medium text-paper/90">
+                <span className="text-sm font-medium text-ink/85">
                   Directly inform tools tailored for your region
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-leaf/20 text-leaf">
+                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-forest/10 text-forest">
                   <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
                 </div>
-                <span className="text-sm font-medium text-paper/90">
+                <span className="text-sm font-medium text-ink/85">
                   Priority onboarding for pilot program cohorts
                 </span>
               </div>
@@ -274,7 +261,7 @@ export default function EarlyAccess() {
 
           {/* Right Column: Prominent Form Card */}
           <div className="lg:col-span-6 xl:col-span-5 w-full">
-            <div className="early-form-container w-full rounded-3xl bg-white p-6 sm:p-8 lg:p-9 text-ink shadow-2xl border border-line">
+            <div className="early-form-container w-full rounded-3xl bg-paper/60 p-6 sm:p-8 lg:p-9 text-ink shadow-sm border border-line">
               <div className="mb-6">
                 <h3 className="font-heading text-xl font-bold tracking-tight text-ink">
                   Join the Early Access List
