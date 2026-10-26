@@ -63,7 +63,7 @@ export default function Footer() {
           >
             {/* Explore */}
             <div>
-              <h3 className="font-heading text-sm font-bold tracking-wide text-ink">
+              <h3 className="text-sm font-semibold tracking-wide text-ink">
                 Explore
               </h3>
               <ul className="mt-4 space-y-3" role="list">
@@ -82,7 +82,7 @@ export default function Footer() {
 
             {/* Get Involved */}
             <div>
-              <h3 className="font-heading text-sm font-bold tracking-wide text-ink">
+              <h3 className="text-sm font-semibold tracking-wide text-ink">
                 Get Involved
               </h3>
               <ul className="mt-4 space-y-3" role="list">
@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div className="sm:col-span-2 lg:col-span-3">
-            <h3 className="font-heading text-sm font-bold tracking-wide text-ink">
+            <h3 className="text-sm font-semibold tracking-wide text-ink">
               Get in Touch
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-muted">
@@ -133,10 +133,10 @@ export default function Footer() {
 
         {/* Integrated Giant Brand Display Wordmark at the Bottom */}
         <div className="relative mt-8 sm:mt-12 overflow-hidden select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center sm:justify-start">
+          <div className="flex w-full justify-center text-center">
             <span
               aria-hidden="true"
-              className="block font-heading text-[18.5vw] sm:text-[17vw] lg:text-[16vw] font-extrabold tracking-tighter leading-[0.82] sm:leading-[0.78] text-transparent bg-clip-text bg-gradient-to-b from-white/20 via-leaf/25 to-leaf/5 select-none pointer-events-none translate-y-1 sm:translate-y-4 whitespace-nowrap"
+              className="block mx-auto text-center font-heading text-[18.5vw] sm:text-[17vw] lg:text-[16vw] font-normal tracking-tight leading-[0.82] sm:leading-[0.78] text-transparent bg-clip-text bg-gradient-to-b from-white/20 via-leaf/25 to-leaf/5 select-none pointer-events-none translate-y-1 sm:translate-y-4 whitespace-nowrap"
             >
               FieldSense
             </span>

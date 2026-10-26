@@ -217,7 +217,7 @@ export default function EarlyAccess() {
 
             <h2
               id="early-access-heading"
-              className="early-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl leading-[1.12]"
+              className="early-header-elem mt-4 font-heading text-3xl font-normal text-ink sm:text-4xl lg:text-5xl leading-[1.18] sm:leading-[1.15]"
             >
               Be part of what&apos;s growing.
             </h2>
@@ -263,7 +263,7 @@ export default function EarlyAccess() {
           <div className="lg:col-span-6 xl:col-span-5 w-full">
             <div className="early-form-container w-full rounded-3xl bg-paper/60 p-6 sm:p-8 lg:p-9 text-ink shadow-sm border border-line">
               <div className="mb-6">
-                <h3 className="font-heading text-xl font-bold tracking-tight text-ink">
+                <h3 className="font-heading text-xl font-normal text-ink sm:text-2xl leading-snug">
                   Join the Early Access List
                 </h3>
                 <p className="text-xs text-muted mt-1 leading-relaxed">

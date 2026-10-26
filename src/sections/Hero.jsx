@@ -63,8 +63,8 @@ export default function Hero() {
 
       {/* Main Centered Container with full-viewport centering */}
       <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center justify-center px-4 pt-32 pb-16 text-center sm:px-6 sm:pt-40 sm:pb-20 lg:px-8">
-        {/* Primary H1 Headline with larger mobile presence */}
-        <h1 className="hero-title max-w-4xl font-heading text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl leading-[1.08]">
+        {/* Primary H1 Headline with refined editorial serif presence */}
+        <h1 className="hero-title max-w-4xl font-heading text-4xl font-normal tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] sm:leading-[1.08]">
           Grow With Foresight.
         </h1>
 

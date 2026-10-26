@@ -94,7 +94,7 @@ export default function Features() {
 
           <h2
             id="features-heading"
-            className="features-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl leading-[1.15]"
+            className="features-header-elem mt-4 font-heading text-3xl font-normal text-ink sm:text-4xl lg:text-5xl leading-[1.18] sm:leading-[1.15]"
           >
             Better insights. Better decisions.
           </h2>
@@ -141,7 +141,7 @@ export default function Features() {
                           <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-forest">
                             {feature.tag}
                           </span>
-                          <h3 className="mt-2 font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">
+                          <h3 className="mt-2 font-heading text-2xl sm:text-3xl font-normal text-ink leading-snug">
                             {feature.title}
                           </h3>
                           <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted">

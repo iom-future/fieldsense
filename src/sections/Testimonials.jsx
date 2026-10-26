@@ -141,7 +141,7 @@ export default function Testimonials() {
 
           <h2
             id="testimonials-heading"
-            className="testimonial-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl leading-[1.15]"
+            className="testimonial-header-elem mt-4 font-heading text-3xl font-normal text-ink sm:text-4xl lg:text-5xl leading-[1.18] sm:leading-[1.15]"
           >
             Agriculture is personal. So is progress.
           </h2>
@@ -172,7 +172,7 @@ export default function Testimonials() {
                         />
                       </div>
                       <div>
-                        <h3 className="font-heading text-lg font-bold text-ink">
+                        <h3 className="font-heading text-lg font-normal text-ink sm:text-xl">
                           {item.name}
                         </h3>
                         <p className="text-xs font-semibold text-leaf">

@@ -174,7 +174,7 @@ export default function IntelligenceLoop() {
 
           <h2
             id="loop-heading"
-            className="loop-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-[1.15]"
+            className="loop-header-elem mt-4 font-heading text-3xl font-normal text-white sm:text-4xl lg:text-5xl leading-[1.18] sm:leading-[1.15]"
           >
             Turning field data into direction.
           </h2>
@@ -236,7 +236,7 @@ export default function IntelligenceLoop() {
                       <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/45">
                         {step.badge}
                       </span>
-                      <h3 className="mt-1 font-heading text-xl font-bold tracking-tight text-white">
+                      <h3 className="mt-1 font-heading text-xl font-normal text-white sm:text-2xl leading-snug">
                         {step.name}
                       </h3>
                       <p className="mt-2.5 text-sm leading-relaxed text-gray-300">

@@ -109,7 +109,7 @@ export default function Problem() {
 
           <h2
             id="problem-heading"
-            className="problem-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl leading-[1.15]"
+            className="problem-header-elem mt-4 font-heading text-3xl font-normal text-ink sm:text-4xl lg:text-5xl leading-[1.18] sm:leading-[1.15]"
           >
             Good decisions need more than guesswork.
           </h2>
@@ -140,7 +140,7 @@ export default function Problem() {
                       </span>
                     </div>
 
-                    <h3 className="mt-6 font-heading text-xl font-bold tracking-tight text-ink">
+                    <h3 className="mt-6 font-heading text-xl font-normal text-ink sm:text-2xl leading-snug">
                       {card.title}
                     </h3>
 

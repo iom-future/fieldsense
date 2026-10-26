@@ -181,7 +181,7 @@ export default function Team() {
 
           <h2
             id="team-heading"
-            className="team-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl leading-[1.15]"
+            className="team-header-elem mt-4 font-heading text-3xl font-normal text-ink sm:text-4xl lg:text-5xl leading-[1.18] sm:leading-[1.15]"
           >
             Built with purpose. Growing with farmers.
           </h2>
@@ -233,7 +233,7 @@ export default function Team() {
                   {member.focus}
                 </span>
 
-                <h4 className="mt-1 font-heading text-lg font-bold tracking-tight text-ink">
+                <h4 className="mt-1 font-heading text-lg font-normal text-ink sm:text-xl">
                   {member.name}
                 </h4>
                 <p className="text-xs font-semibold text-leaf">
@@ -258,7 +258,7 @@ export default function Team() {
                 OUR STORY
               </span>
 
-              <h3 className="story-elem mt-2 font-heading text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+              <h3 className="story-elem mt-2 font-heading text-2xl font-normal text-ink sm:text-3xl leading-snug">
                 A better way to understand the field.
               </h3>
 

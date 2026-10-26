@@ -81,7 +81,7 @@ export default function HeroStatsStrip() {
                 </div>
 
                 <div>
-                  <h3 className="font-heading text-lg font-bold tracking-tight text-ink lg:text-xl">
+                  <h3 className="text-lg font-semibold tracking-tight text-ink lg:text-xl">
                     {item.value}
                   </h3>
                   <p className="mt-0.5 text-xs text-muted leading-relaxed">

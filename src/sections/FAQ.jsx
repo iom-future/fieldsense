@@ -122,7 +122,7 @@ export default function FAQ() {
 
           <h2
             id="faq-heading"
-            className="faq-header-elem mt-4 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl leading-[1.15]"
+            className="faq-header-elem mt-4 font-heading text-3xl font-normal text-ink sm:text-4xl lg:text-5xl leading-[1.18] sm:leading-[1.15]"
           >
             Good questions. Clear answers.
           </h2>
@@ -150,7 +150,7 @@ export default function FAQ() {
                     id={questionId}
                     className="flex w-full items-center justify-between gap-4 py-5 sm:py-6 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 rounded-md"
                   >
-                    <span className="font-heading text-base sm:text-lg font-bold text-ink transition-colors duration-150 group-hover:text-forest">
+                    <span className="text-base sm:text-lg font-semibold text-ink transition-colors duration-150 group-hover:text-forest">
                       {item.question}
                     </span>
                     <span

@@ -239,7 +239,7 @@ export default function Navbar() {
                     className="flex flex-col justify-between rounded-2xl border border-line bg-white p-5 shadow-xs transition-colors hover:border-forest/40"
                   >
                     <div>
-                      <h4 className="font-heading text-base font-bold text-ink">
+                      <h4 className="font-semibold text-base text-ink">
                         {item.label}
                       </h4>
                       <p className="mt-1 text-xs text-muted leading-relaxed">
