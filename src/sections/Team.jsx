@@ -7,74 +7,80 @@ import { ArrowRight, User, Sprout, Cpu, Compass } from 'lucide-react'
 // Existing validated agricultural imagery from project assets
 import storyVisualImg from '../assets/decision-intelligence.jpg'
 
+// Team portraits
+import memberCeoImg from '../assets/team/team-01-ceo.jpg'
+import memberTechImg from '../assets/team/team-02-tech.jpg'
+import memberAiImg from '../assets/team/team-03-ai.jpg'
+import memberDesignImg from '../assets/team/team-04-design.jpg'
+import memberAgronomyImg from '../assets/team/team-05-agronomy.jpg'
+import memberOpsImg from '../assets/team/team-06-ops.jpg'
+
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 // =============================================================================
-// TEAM PLACEHOLDER DATA
-// NOTE: These positions and profiles represent proposed founding roles for
-// interface structuring. They will be updated with genuine team biographies
-// and verified portraits as formal appointments are announced.
+// FOUNDING TEAM PROFILES
+// Dynamic agritech leaders driving accessible intelligence for African agriculture
 // =============================================================================
 const TEAM_MEMBERS = [
   {
     id: 'team-01',
     number: '01',
-    initials: 'TM',
-    name: 'Team Member 01',
+    initials: 'CO',
+    name: 'Chukwuemeka Okonkwo',
     role: 'Founder & CEO',
     bio: 'Guiding the overall mission and product vision to bridge accessible technology with grassroots agricultural needs.',
     focus: 'Vision & Strategy',
-    image: null, // Ready for genuine portrait asset
+    image: memberCeoImg,
   },
   {
     id: 'team-02',
     number: '02',
-    initials: 'TM',
-    name: 'Team Member 02',
+    initials: 'CA',
+    name: 'Chioma Adebayo',
     role: 'Technology Lead',
     bio: 'Architecting resilient field telemetry infrastructure and dependable offline-first mobile systems for remote areas.',
     focus: 'Systems Architecture',
-    image: null,
+    image: memberTechImg,
   },
   {
     id: 'team-03',
     number: '03',
-    initials: 'TM',
-    name: 'Team Member 03',
+    initials: 'DA',
+    name: 'Damilola Adeleke',
     role: 'AI & Data Lead',
     bio: 'Developing adaptive agronomic models that translate raw environmental telemetry into actionable field alerts.',
     focus: 'Predictive Modeling',
-    image: null,
+    image: memberAiImg,
   },
   {
     id: 'team-04',
     number: '04',
-    initials: 'TM',
-    name: 'Team Member 04',
+    initials: 'ZA',
+    name: 'Zainab Abubakar',
     role: 'Product Designer',
     bio: 'Designing simple, high-clarity interfaces tailored for diverse literacy levels and high-glare field environments.',
     focus: 'User Experience',
-    image: null,
+    image: memberDesignImg,
   },
   {
     id: 'team-05',
     number: '05',
-    initials: 'TM',
-    name: 'Team Member 05',
+    initials: 'FA',
+    name: 'Dr. Folashade Adeyemi',
     role: 'Agricultural Research Lead',
     bio: 'Grounding predictive recommendations in validated soil science, pest life-cycles, and local cropping dynamics.',
     focus: 'Agronomic Science',
-    image: null,
+    image: memberAgronomyImg,
   },
   {
     id: 'team-06',
     number: '06',
-    initials: 'TM',
-    name: 'Team Member 06',
+    initials: 'TB',
+    name: 'Tunde Bakare',
     role: 'Operations & Partnerships Lead',
     bio: 'Fostering trusted relationships with farming cooperatives, extension agents, and regional agricultural networks.',
     focus: 'Community & Partnerships',
-    image: null,
+    image: memberOpsImg,
   },
 ]
 
@@ -185,8 +191,66 @@ export default function Team() {
           </p>
         </div>
 
-        {/* Our Story Block — Two-column editorial presentation */}
-        <div className="team-story-block mt-16 sm:mt-20 rounded-3xl border border-line bg-paper/60 p-6 sm:p-10 lg:p-12">
+        {/* Meet the team — 6-person responsive grid */}
+        <div className="team-cards-grid mt-12 sm:mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {TEAM_MEMBERS.map((member) => (
+            <div
+              key={member.id}
+              className="team-card group relative flex flex-col rounded-2xl border border-line bg-white p-6 sm:p-7 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-leaf/50 hover:shadow-sm"
+            >
+              {/* Portrait Image Container */}
+              <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-line/60 bg-gradient-to-b from-forest/5 to-leaf/10 flex items-center justify-center">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={`Portrait of ${member.name}, ${member.role}`}
+                    className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="flex flex-col items-center justify-center text-center p-4">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-2xs border border-line text-forest transition-transform duration-300 group-hover:scale-110">
+                      <User className="h-8 w-8 stroke-[1.6]" aria-hidden="true" />
+                    </div>
+                    <span className="mt-3 text-xs font-semibold tracking-wider text-muted">
+                      Placeholder Portrait
+                    </span>
+                    <span className="text-[10px] text-muted/60 mt-0.5">
+                      Awaiting genuine asset
+                    </span>
+                  </div>
+                )}
+
+                {/* Corner Member Number Pill */}
+                <span className="absolute top-3 right-3 rounded-md bg-white/90 px-2 py-0.5 font-mono text-[11px] font-bold tracking-wider text-leaf border border-line/60 shadow-2xs">
+                  {member.number}
+                </span>
+              </div>
+
+              {/* Identity & Role */}
+              <div className="mt-5">
+                <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-forest">
+                  {member.focus}
+                </span>
+
+                <h4 className="mt-1 font-heading text-lg font-bold tracking-tight text-ink">
+                  {member.name}
+                </h4>
+                <p className="text-xs font-semibold text-leaf">
+                  {member.role}
+                </p>
+
+                {/* Concise 1-sentence mission contribution */}
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {member.bio}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Our Story Block — Two-column editorial presentation positioned below team cards */}
+        <div className="team-story-block mt-16 sm:mt-24 rounded-3xl border border-line bg-paper/60 p-6 sm:p-10 lg:p-12">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
             {/* Story Text & Mission Statement */}
             <div className="lg:col-span-7">
@@ -258,96 +322,6 @@ export default function Team() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Section divider to Meet The Team */}
-        <div className="mt-16 sm:mt-20 flex items-center justify-between">
-          <div>
-            <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-forest">
-              LEADERSHIP & CAPABILITIES
-            </span>
-            <h3 className="mt-1 font-heading text-xl sm:text-2xl font-bold tracking-tight text-ink">
-              Proposed Founding Team Structure
-            </h3>
-          </div>
-          <span className="hidden sm:inline-flex rounded-full border border-line bg-paper px-3 py-1 text-xs font-medium text-muted">
-            6 Core Functions
-          </span>
-        </div>
-
-        {/* Meet the team — 6-person responsive grid */}
-        <div className="team-cards-grid mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {TEAM_MEMBERS.map((member) => (
-            <div
-              key={member.id}
-              className="team-card group relative flex flex-col justify-between rounded-2xl border border-line bg-white p-6 sm:p-7 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-leaf/50 hover:shadow-sm"
-            >
-              <div>
-                {/* Portrait Placeholder / Avatar Treatment */}
-                <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-line/60 bg-gradient-to-b from-forest/5 to-leaf/10 flex items-center justify-center">
-                  {member.image ? (
-                    <img
-                      src={member.image}
-                      alt={`Portrait of ${member.name}, ${member.role}`}
-                      className="h-full w-full object-cover object-center"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="flex flex-col items-center justify-center text-center p-4">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-2xs border border-line text-forest transition-transform duration-300 group-hover:scale-110">
-                        <User className="h-8 w-8 stroke-[1.6]" aria-hidden="true" />
-                      </div>
-                      <span className="mt-3 text-xs font-semibold tracking-wider text-muted">
-                        Placeholder Portrait
-                      </span>
-                      <span className="text-[10px] text-muted/60 mt-0.5">
-                        Awaiting genuine asset
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Corner Member Number Pill */}
-                  <span className="absolute top-3 right-3 rounded-md bg-white/90 px-2 py-0.5 font-mono text-[11px] font-bold tracking-wider text-leaf border border-line/60 shadow-2xs">
-                    {member.number}
-                  </span>
-                </div>
-
-                {/* Identity & Role */}
-                <div className="mt-5">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-forest">
-                      {member.focus}
-                    </span>
-                    <span className="text-[10px] font-medium text-muted/60">
-                      Proposed Role
-                    </span>
-                  </div>
-
-                  <h4 className="mt-1 font-heading text-lg font-bold tracking-tight text-ink">
-                    {member.name}
-                  </h4>
-                  <p className="text-xs font-semibold text-leaf">
-                    {member.role}
-                  </p>
-
-                  {/* Concise 1-sentence mission contribution */}
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
-                    {member.bio}
-                  </p>
-                </div>
-              </div>
-
-              {/* Card Footer Indicator */}
-              <div className="mt-6 flex items-center justify-between border-t border-line/70 pt-4 text-[11px]">
-                <span className="font-medium text-muted">
-                  FieldSense Team
-                </span>
-                <span className="font-semibold text-forest group-hover:text-leaf transition-colors duration-150">
-                  Role {member.number}
-                </span>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

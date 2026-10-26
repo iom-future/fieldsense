@@ -126,11 +126,11 @@ export default function Footer() {
         </div>
 
         {/* Integrated Giant Brand Display Wordmark at the Bottom */}
-        <div className="relative mt-8 sm:mt-12 overflow-hidden select-none">
-          <div className="flex justify-start">
+        <div className="relative mt-8 sm:mt-12 overflow-hidden select-none -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center sm:justify-start">
             <span
               aria-hidden="true"
-              className="block font-heading text-[16vw] sm:text-[16.5vw] font-extrabold tracking-tighter leading-[0.78] text-transparent bg-clip-text bg-gradient-to-b from-white/20 via-leaf/25 to-leaf/5 select-none pointer-events-none translate-y-2 sm:translate-y-4"
+              className="block font-heading text-[18.5vw] sm:text-[17vw] lg:text-[16vw] font-extrabold tracking-tighter leading-[0.82] sm:leading-[0.78] text-transparent bg-clip-text bg-gradient-to-b from-white/20 via-leaf/25 to-leaf/5 select-none pointer-events-none translate-y-1 sm:translate-y-4 whitespace-nowrap"
             >
               FieldSense
             </span>

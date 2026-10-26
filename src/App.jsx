@@ -2,7 +2,6 @@ import Navbar from './components/Navbar.jsx'
 import Hero from './sections/Hero.jsx'
 import HeroStatsStrip from './components/HeroStatsStrip.jsx'
 import Problem from './sections/Problem.jsx'
-import HowItWorks from './sections/HowItWorks.jsx'
 import Features from './sections/Features.jsx'
 import IntelligenceLoop from './sections/IntelligenceLoop.jsx'
 import Testimonials from './sections/Testimonials.jsx'
@@ -19,7 +18,6 @@ function App() {
         <Hero />
         <HeroStatsStrip />
         <Problem />
-        <HowItWorks />
         <Features />
         <IntelligenceLoop />
         <Testimonials />

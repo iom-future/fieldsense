@@ -136,11 +136,14 @@ export default function IntelligenceLoop() {
 
   return (
     <section
-      id="intelligence-loop"
+      id="how-it-works"
       ref={container}
       aria-labelledby="loop-heading"
       className="relative bg-black py-20 sm:py-24 lg:py-32 border-b border-white/10 overflow-hidden text-white"
     >
+      {/* Anchor alias for intelligence-loop links */}
+      <span id="intelligence-loop" className="absolute -top-24 pointer-events-none" aria-hidden="true" />
+
       {/* Background Grid Pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20"
